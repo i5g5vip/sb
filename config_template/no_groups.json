@@ -65,10 +65,6 @@
         "server": "proxyDns"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns"
-      },
-      {
         "query_type": [
           "A",
           "AAAA"
