@@ -48,10 +48,6 @@
         "server": "localDns"
       },
       {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
-      },
-      {
         "outbound": "any",
         "server": "localDns",
         "disable_cache": true
@@ -274,13 +270,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
-        "download_detour": "auto"
-      },
-      {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
         "download_detour": "auto"
       }
     ]
