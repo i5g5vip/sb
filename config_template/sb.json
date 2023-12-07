@@ -63,13 +63,6 @@
       {
         "clash_mode": "全局",
         "server": "proxyDns"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "remote"
       }
     ],
     "strategy": "ipv4_only"
