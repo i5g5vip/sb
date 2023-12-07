@@ -13,8 +13,7 @@
       "default_mode": "规则"
     },
   "cache_file": {
-    "enabled": true,
-    "store_fakeip": false
+    "enabled": true
     }
   },
   "dns": {
