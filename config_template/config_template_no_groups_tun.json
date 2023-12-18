@@ -18,10 +18,6 @@
       {
         "tag": "block",
         "address": "rcode://success"
-      },
-      {
-        "tag": "remote",
-        "address": "fakeip"
       }
     ],
     "rules": [
@@ -57,21 +53,8 @@
       {
         "geosite": "geolocation-!cn",
         "server": "proxyDns"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "remote"
       }
     ],
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "independent_cache": true,
     "strategy": "ipv4_only"
   },
   "inbounds": [
