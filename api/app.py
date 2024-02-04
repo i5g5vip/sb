@@ -130,10 +130,13 @@ def config(url):
     encoded_url = unquote(url)
     #print (f"encoded_url: {encoded_url}")
     index_of_colon = encoded_url.find(":")
-    
+
     if not query_string:
-        if '&' in encoded_url:
-            param = urlparse(encoded_url.split('&', 1)[-1])
+        if any(substring in encoded_url for substring in ['&emoji=', '&file=']):
+            if '|' in encoded_url:
+                param = urlparse(encoded_url.rsplit('&', 1)[-1])
+            else:
+                param = urlparse(encoded_url.split('&', 1)[-1])
             request.args = dict(item.split('=') for item in param.path.split('&'))
             if request.args.get('prefix'):
                 request.args['prefix'] = unquote(request.args['prefix'])
@@ -144,7 +147,7 @@ def config(url):
                     if next_index < len(request.args['file']) and request.args['file'][next_index] != "/":
                         request.args['file'] = request.args['file'][:next_index-1] + "/" + request.args['file'][next_index-1:]
     else:
-        if '&' in query_string:
+        if any(substring in query_string for substring in ['&emoji=', '&file=']):
             param = urlparse(query_string.split('&', 1)[-1])
             request.args = dict(item.split('=') for item in param.path.split('&'))
             if request.args.get('prefix'):
@@ -168,7 +171,10 @@ def config(url):
     if query_string:
         full_url = f"{encoded_url}?{query_string}"
     else:
-        full_url = f"{encoded_url.split('&')[0]}"
+        if any(substring in encoded_url for substring in ['&emoji=', '&file=']):
+            full_url = f"{encoded_url.split('&')[0]}"
+        else:
+            full_url = f"{encoded_url}"
 
     #print (f"full_url: {full_url}")
 
