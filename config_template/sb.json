@@ -76,7 +76,7 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "system"
+      "stack": "mixed"
     },
     {
       "type": "mixed",
