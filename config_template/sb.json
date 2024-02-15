@@ -43,8 +43,8 @@
         "server": "localDns"
       },
       {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
+        "domain_suffix": "googleapis.cn",
+        "server": "proxyDns"
       },
       {
         "outbound": "any",
@@ -75,18 +75,11 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
-        }
-      }
+      "stack": "system"
     },
     {
       "type": "mixed",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "listen_port": 2080,
       "sniff": true,
       "users": []
@@ -102,18 +95,7 @@
       ]
     },
     {
-      "tag":"🤖 ChatGPT",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
-        "{all}"
-      ],
-      "filter":[
-        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|港"]}
-      ]
-    },
-    {
-      "tag":"🎬 Tiktok",
+      "tag":"ChatGPT",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -121,7 +103,31 @@
       ]
     },
     {
-      "tag":"🎬 Netflix",
+      "tag":"Gemini",
+      "type":"selector",
+      "outbounds":[
+        "手动选择",
+        "{all}"
+      ]
+    },
+    {
+      "tag":"Copilot",
+      "type":"selector",
+      "outbounds":[
+        "手动选择",
+        "{all}"
+      ]
+    },
+    {
+      "tag":"Netflix Disney+",
+      "type":"selector",
+      "outbounds":[
+        "手动选择",
+        "{all}"
+      ]
+    },
+    {
+      "tag":"Tiktok",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -161,10 +167,6 @@
         "outbound": "dns-out"
       },
       {
-        "rule_set": "geosite-category-ads-all",
-        "outbound": "block"
-      },
-      {
         "clash_mode": "直连",
         "outbound": "直连"
       },
@@ -173,7 +175,13 @@
         "outbound": "手动选择"
       },
       {
+        "domain_suffix": "googleapis.cn",
+        "outbound": "手动选择"
+      },
+      {
         "domain": [
+          "on6.springsunday.net",
+          "on.springsunday.net",
           "clash.razord.top",
           "yacd.metacubex.one",
           "yacd.haishan.me",
@@ -183,15 +191,31 @@
       },
       {
         "rule_set": "geosite-openai",
-        "outbound": "🤖 ChatGPT"
+        "outbound": "ChatGPT"
+      },
+      {
+        "rule_set": "geoip-google",
+        "outbound": "Gemini"
+      },
+      {
+        "rule_set": "geosite-google",
+        "outbound": "Gemini"
+      },
+      {
+        "rule_set": "geosite-microsoft",
+        "outbound": "Copilot"
+      },
+      {
+        "rule_set": "geoip-netflix",
+        "outbound": "Netflix Disney+"
+      },
+      {
+        "rule_set": ["geosite-netflix","geosite-disney"],
+        "outbound": "Netflix Disney+"
       },
       {
         "rule_set": "geosite-tiktok",
-        "outbound": "🎬 Tiktok"
-      },
-      {
-        "rule_set": "geosite-netflix",
-        "outbound": "🎬 Netflix"
+        "outbound": "Tiktok"
       },
       {
         "ip_is_private": true,
@@ -211,42 +235,70 @@
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+        "download_detour": "自动选择"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
         "download_detour": "自动选择"
       },
       {
         "tag": "geosite-openai",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+        "download_detour": "自动选择"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
+        "download_detour": "自动选择"
+      },
+      {
+        "tag": "geosite-microsoft",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
         "download_detour": "自动选择"
       },
       {
         "tag": "geosite-tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
+        "download_detour": "自动选择"
+      },
+      {
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
         "download_detour": "自动选择"
       },
       {
         "tag": "geosite-netflix",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+        "download_detour": "自动选择"
+      },
+      {
+        "tag": "geosite-disney",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
         "download_detour": "自动选择"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
         "download_detour": "自动选择"
       }
     ]
