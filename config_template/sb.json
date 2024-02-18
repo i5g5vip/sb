@@ -182,11 +182,7 @@
       {
         "domain": [
           "on6.springsunday.net",
-          "on.springsunday.net",
-          "clash.razord.top",
-          "yacd.metacubex.one",
-          "yacd.haishan.me",
-          "d.metacubex.one"
+          "on.springsunday.net"
         ],
         "outbound": "直连"
       },
