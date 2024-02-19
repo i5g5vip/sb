@@ -43,7 +43,7 @@
         "server": "localDns"
       },
       {
-        "domain_suffix": "googleapis.cn",
+        "domain_suffix": ".googleapis.cn",
         "server": "proxyDns"
       },
       {
@@ -176,7 +176,7 @@
         "outbound": "手动选择"
       },
       {
-        "domain_suffix": "googleapis.cn",
+        "domain_suffix": ".googleapis.cn",
         "outbound": "手动选择"
       },
       {
