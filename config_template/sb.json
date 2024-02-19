@@ -76,7 +76,7 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "mixed"
+      "stack": "gvisor"
     },
     {
       "type": "mixed",
@@ -181,8 +181,22 @@
       },
       {
         "domain": [
+          "on.springsunday.net",
           "on6.springsunday.net",
-          "on.springsunday.net"
+          "www.freeok.me"
+        ],
+        "outbound": "直连"
+      },
+      {
+        "domain_keyword": [
+          "vip.ffzy-play",
+          "vip.ffzy-online",
+          "vip.lz-cdn",
+          "vip.kuaikan-play",
+          "vip.kuaikan-cdn",
+          "v.cdnlz",
+          "bfbfvip.com",
+          "tscdn.hyz"
         ],
         "outbound": "直连"
       },
