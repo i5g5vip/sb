@@ -26,7 +26,7 @@
       {
         "tag": "localDns",
         "address": "h3://223.5.5.5/dns-query",
-        "detour": "直连"
+        "detour": "DIRECT"
       },
       {
         "tag": "block",
@@ -148,7 +148,7 @@
     },
     {
       "type": "direct",
-      "tag": "直连"
+      "tag": "DIRECT"
     },
     {
       "type": "dns",
@@ -169,7 +169,7 @@
       },
       {
         "clash_mode": "直连",
-        "outbound": "直连"
+        "outbound": "DIRECT"
       },
       {
         "clash_mode": "全局",
@@ -185,7 +185,7 @@
           "on6.springsunday.net",
           "www.freeok.me"
         ],
-        "outbound": "直连"
+        "outbound": "DIRECT"
       },
       {
         "domain_keyword": [
@@ -196,7 +196,7 @@
           "bfbfvip.com",
           "tscdn.hyz"
         ],
-        "outbound": "直连"
+        "outbound": "DIRECT"
       },
       {
         "rule_set": "geosite-openai",
@@ -228,15 +228,15 @@
       },
       {
         "ip_is_private": true,
-        "outbound": "直连"
+        "outbound": "DIRECT"
       },
       {
         "rule_set": "geoip-cn",
-        "outbound": "直连"
+        "outbound": "DIRECT"
       },
       {
         "rule_set": "geosite-cn",
-        "outbound": "直连"
+        "outbound": "DIRECT"
       }
     ],
     "rule_set": [
