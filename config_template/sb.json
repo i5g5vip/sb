@@ -19,51 +19,73 @@
   "dns": {
     "servers": [
       {
-        "tag": "proxyDns",
+        "tag": "dns_proxy",
         "address": "https://8.8.8.8/dns-query",
+        "address_resolver": "dns_resolver",
         "detour": "手动选择"
       },
       {
-        "tag": "localDns",
+        "tag": "dns_direct",
         "address": "h3://223.5.5.5/dns-query",
+        "address_resolver": "dns_resolver",
+        "detour": "DIRECT"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      },
+      {
+        "tag": "dns_resolver",
+        "address": "223.5.5.5",
         "detour": "DIRECT"
       },
       {
         "tag": "block",
         "address": "rcode://success"
+      },
+      {
+        "tag": "local",
+        "address": "local",
+        "detour": "DIRECT"
       }
     ],
     "rules": [
       {
-        "domain": [
-          "ghproxy.com",
-          "cdn.jsdelivr.net",
-          "testingcf.jsdelivr.net"
-        ],
-        "server": "localDns"
-      },
-      {
-        "domain_suffix": ".googleapis.cn",
-        "server": "proxyDns"
-      },
-      {
         "outbound": "any",
-        "server": "localDns",
-        "disable_cache": true
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "localDns"
-      },   
-      {
-        "clash_mode": "直连",
-        "server": "localDns"
+        "server": "dns_resolver"
       },
       {
         "clash_mode": "全局",
-        "server": "proxyDns"
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "直连",
+        "server": "dns_direct"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "invert": true,
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA",
+          "CNAME"
+        ],
+        "server": "dns_direct"
       }
     ],
+    "final": "dns_direct",
+    "reverse_mapping": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/16",
+      "inet6_range": "fc00::/16"
+    },
+    "independent_cache": true,
     "strategy": "prefer_ipv6"
   },
   "inbounds": [
