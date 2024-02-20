@@ -203,11 +203,7 @@
         "outbound": "ChatGPT"
       },
       {
-        "rule_set": "geoip-google",
-        "outbound": "Gemini"
-      },
-      {
-        "rule_set": "geosite-google",
+        "rule_set": "geosite-gemini",
         "outbound": "Gemini"
       },
       {
@@ -248,17 +244,10 @@
         "download_detour": "自动选择"
       },
       {
-        "tag": "geoip-google",
         "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "tag": "geosite-google",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
+        "tag": "geosite-gemini",
+        "format": "source",
+        "url": "https://raw.githubusercontent.com/i5g5vip/sb/main/gemini.json",
         "download_detour": "自动选择"
       },
       {
