@@ -211,7 +211,7 @@
         "outbound": "Gemini"
       },
       {
-        "rule_set": "geosite-microsoft",
+        "rule_set": "geosite-copilot",
         "outbound": "Copilot"
       },
       {
@@ -262,10 +262,10 @@
         "download_detour": "自动选择"
       },
       {
-        "tag": "geosite-microsoft",
+        "tag": "geosite-copilot",
         "type": "remote",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Copilot.srs",
         "download_detour": "自动选择"
       },
       {
