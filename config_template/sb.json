@@ -53,14 +53,6 @@
         "invert": true,
         "server": "dns_proxy",
         "rewrite_ttl": 1
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA",
-          "CNAME"
-        ],
-        "server": "dns_direct"
       }
     ],
     "final": "dns_direct",
