@@ -20,8 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "手动选择"
+        "address": "https://8.8.8.8/dns-query"
       },
       {
         "tag": "dns_direct",
@@ -61,8 +60,7 @@
       {
         "query_type": [
           "A",
-          "AAAA",
-          "CNAME"
+          "AAAA"
         ],
         "server": "dns_direct"
       }
@@ -70,7 +68,7 @@
     "final": "dns_direct",
     "fakeip": {
       "enabled": true,
-      "inet4_range": "198.18.0.0/16",
+      "inet4_range": "22.22.0.0/16",
       "inet6_range": "fc00::/16"
     },
     "independent_cache": true,
