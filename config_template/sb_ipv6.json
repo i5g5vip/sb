@@ -51,11 +51,11 @@
         "server": "dns_direct"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geosite-!cn",
         "server": "dns_proxy"
       },
       {
-        "rule_set": "geosite-category-ads-all",
+        "rule_set": "geosite-ads",
         "server": "block"
       }   
     ],
@@ -243,11 +243,11 @@
         "outbound": "DIRECT"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": "geosite-!cn",
         "outbound": "手动选择"
       },
       {
-        "rule_set": "geosite-category-ads-all",
+        "rule_set": "geosite-ads",
         "outbound": "block"
       }
     ],
@@ -317,14 +317,14 @@
       },
       {
         "type": "remote",
-        "tag": "geosite-geolocation-!cn",
+        "tag": "geosite-!cn",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
         "download_detour": "DIRECT"
       },
       {
         "type": "remote",
-        "tag": "geosite-category-ads-all",
+        "tag": "geosite-ads",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
         "download_detour": "DIRECT"
