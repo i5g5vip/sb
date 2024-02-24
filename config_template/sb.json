@@ -50,7 +50,15 @@
       {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
-      }
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "dns_proxy"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
+      }   
     ],
     "final": "dns_proxy",
     "strategy": "prefer_ipv6"
@@ -157,6 +165,15 @@
         "outbound": "dns-out"
       },
       {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "outbound": "block"
+      },
+      {
         "clash_mode": "直连",
         "outbound": "DIRECT"
       },
@@ -204,7 +221,11 @@
         "outbound": "Netflix Disney+"
       },
       {
-        "rule_set": ["geosite-netflix","geosite-disney"],
+        "rule_set": [
+          "geoip-netflix",
+          "geosite-netflix",
+          "geosite-disney"
+        ],
         "outbound": "Netflix Disney+"
       },
       {
@@ -216,21 +237,29 @@
         "outbound": "DIRECT"
       },
       {
-        "rule_set": "geoip-cn",
+        "rule_set": [
+          "geoip-cn",
+          "geosite-cn"
+        ],
         "outbound": "DIRECT"
       },
       {
-        "rule_set": "geosite-cn",
-        "outbound": "DIRECT"
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "手动选择"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "outbound": "block"
       }
     ],
     "rule_set": [
       {
-        "tag": "geosite-openai",
+        "tag":{
         "type": "remote",
+        "tag": "geosite-openai",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
         "type": "remote",
@@ -240,53 +269,67 @@
         "download_detour": "自动选择"
       },
       {
-        "tag": "geosite-copilot",
         "type": "remote",
+        "tag": "geosite-copilot",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Copilot.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geoip-netflix",
         "type": "remote",
+        "tag": "geoip-netflix",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geosite-netflix",
         "type": "remote",
+        "tag": "geosite-netflix",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geosite-disney",
         "type": "remote",
+        "tag": "geosite-disney",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geosite-tiktok",
         "type": "remote",
+        "tag": "geosite-tiktok",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geoip-cn",
         "type": "remote",
+        "tag": "geoip-cn",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
       },
       {
-        "tag": "geosite-cn",
         "type": "remote",
+        "tag": "geosite-cn",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-        "download_detour": "自动选择"
+        "download_detour": "DIRECT"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-!cn",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "DIRECT"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ads-all",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "DIRECT"
       }
     ]
   }
