@@ -254,7 +254,6 @@
     ],
     "rule_set": [
       {
-        "tag":{
         "type": "remote",
         "tag": "geosite-openai",
         "format": "binary",
