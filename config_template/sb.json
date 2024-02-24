@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://8.8.8.8/dns-query",
+        "address": "https://1.1.1.1/dns-query",
         "detour": "手动选择"
       },
       {
@@ -41,8 +41,7 @@
       },
       {
         "clash_mode": "全局",
-        "server": "dns_proxy",
-        "rewrite_ttl": 1
+        "server": "dns_proxy"
       },
       {
         "clash_mode": "直连",
@@ -50,12 +49,10 @@
       },
       {
         "rule_set": "geosite-cn",
-        "invert": true,
-        "server": "dns_proxy",
-        "rewrite_ttl": 1
+        "server": "dns_direct"
       }
     ],
-    "final": "dns_direct",
+    "final": "dns_proxy",
     "strategy": "prefer_ipv6"
   },
   "inbounds": [
