@@ -184,14 +184,6 @@
         "outbound": "手动选择"
       },
       {
-        "domain": [
-          "on.springsunday.net",
-          "on6.springsunday.net",
-          "www.freeok.me"
-        ],
-        "outbound": "DIRECT"
-      },
-      {
         "domain_keyword": [
           "vip.ffzy",
           "vip.lz-cdn",
