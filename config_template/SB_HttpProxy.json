@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://dns.google/dns-query",
+        "address": "https://d/dns-query",
         "address_resolver": "dns_direct"
       },
       {
