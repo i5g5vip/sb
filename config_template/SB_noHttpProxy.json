@@ -158,6 +158,7 @@
   ],
   "route": {
     "auto_detect_interface": true,
+    "override_android_vpn": true,
     "final": "手动选择",
     "rules": [
       {
