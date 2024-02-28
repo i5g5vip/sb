@@ -10,7 +10,7 @@
       "external_ui_download_detour": "",
       "external_ui": "ui",
       "secret": "",
-      "default_mode": "规则"
+      "default_mode": "Rule"
     },
   "cache_file": {
     "enabled": true
@@ -44,12 +44,12 @@
         "disable_cache": true
       },
       {
-        "clash_mode": "全局",
-        "server": "dns_proxy"
+        "clash_mode": "Direct",
+        "server": "dns_direct"
       },
       {
-        "clash_mode": "直连",
-        "server": "dns_direct"
+        "clash_mode": "Global",
+        "server": "dns_proxy"
       },
       {
         "rule_set": "geosite-cn",
@@ -160,7 +160,7 @@
     },
     {
       "type": "block",
-      "tag": "block"
+      "tag": "REJECT"
     }
   ],
   "route": {
@@ -178,7 +178,7 @@
       {
         "network": "udp",
         "port": 443,
-        "outbound": "block"
+        "outbound": "REJECT"
       },
       {
         "ip_is_private": true,
@@ -186,14 +186,14 @@
       },
       {
         "rule_set": "geosite-ads",
-        "outbound": "block"
+        "outbound": "REJECT"
       },
       {
-        "clash_mode": "直连",
+        "clash_mode": "Direct",
         "outbound": "DIRECT"
       },
       {
-        "clash_mode": "全局",
+        "clash_mode": "Global",
         "outbound": "手动选择"
       },
       {
