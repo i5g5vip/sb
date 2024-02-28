@@ -35,6 +35,10 @@
     ],
     "rules": [
       {
+        "rule_set": "geosite-ads",
+        "server": "block"
+      },
+      {
         "outbound": "any",
         "server": "dns_direct",
         "disable_cache": true
@@ -54,11 +58,7 @@
       {
         "rule_set": "geosite-!cn",
         "server": "dns_proxy"
-      },
-      {
-        "rule_set": "geosite-ads",
-        "server": "block"
-      }   
+      }
     ],
     "final": "dns_proxy",
     "strategy": "prefer_ipv4"
@@ -181,6 +181,14 @@
         "outbound": "block"
       },
       {
+        "ip_is_private": true,
+        "outbound": "DIRECT"
+      },
+      {
+        "rule_set": "geosite-ads",
+        "outbound": "block"
+      }
+      {
         "clash_mode": "直连",
         "outbound": "DIRECT"
       },
@@ -232,10 +240,6 @@
         "outbound": "Tiktok"
       },
       {
-        "ip_is_private": true,
-        "outbound": "DIRECT"
-      },
-      {
         "rule_set": [
           "geoip-cn",
           "geosite-cn"
@@ -245,13 +249,16 @@
       {
         "rule_set": "geosite-!cn",
         "outbound": "手动选择"
-      },
-      {
-        "rule_set": "geosite-ads",
-        "outbound": "block"
       }
     ],
     "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geosite-ads",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "DIRECT"
+      }
       {
         "type": "remote",
         "tag": "geosite-openai",
@@ -320,13 +327,6 @@
         "tag": "geosite-!cn",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "DIRECT"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-ads",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
         "download_detour": "DIRECT"
       }
     ]
