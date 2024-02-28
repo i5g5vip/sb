@@ -187,7 +187,7 @@
       {
         "rule_set": "geosite-ads",
         "outbound": "block"
-      }
+      },
       {
         "clash_mode": "直连",
         "outbound": "DIRECT"
@@ -258,7 +258,7 @@
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
         "download_detour": "DIRECT"
-      }
+      },
       {
         "type": "remote",
         "tag": "geosite-openai",
