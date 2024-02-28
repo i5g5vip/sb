@@ -157,7 +157,7 @@
     }
   ],
   "route": {
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
     "final": "手动选择",
     "rules": [
       {
