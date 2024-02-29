@@ -262,9 +262,9 @@
       {
         "type": "remote",
         "tag": "geosite-gemini",
-        "format": "source",
-        "url": "https://raw.githubusercontent.com/i5g5vip/sb/main/gemini.json",
-        "download_detour": "自动选择"
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Gemini.srs",
+        "download_detour": "DIRECT"
       },
       {
         "type": "remote",
