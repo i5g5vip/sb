@@ -20,8 +20,9 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://cloudflare-dns.com/dns-query",
-        "address_resolver": "dns_direct"
+        "address": "udp://dns.google",
+        "address_resolver": "dns_direct",
+        "detour": "自动选择"
       },
       {
         "tag": "dns_direct",
@@ -141,7 +142,9 @@
       "filter":[
         {"action":"exclude","keywords":["网站|剩余|流量|过期|时间|期|地址"]}
       ],
-      "url": "http://www.google.com/gen_204"
+      "url": "http://cp.cloudflare.com",
+      "interval": "10m",
+      "tolerance": 15
     },
     {
       "type": "direct",
