@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "udp://one.one.one.one",
+        "address": "udp://dns.google",
         "address_resolver": "dns_direct",
         "detour": "自动选择"
       },
@@ -280,7 +280,7 @@
         "type": "remote",
         "tag": "geosite-copilot",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Copilot.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
         "download_detour": "DIRECT"
       },
       {
