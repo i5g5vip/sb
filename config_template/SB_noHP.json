@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "tls://dns.google",
+        "address": "tls://8.8.8.8",
         "address_resolver": "dns_direct",
         "detour": "自动选择"
       },
