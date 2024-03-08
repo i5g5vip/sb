@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "tls://one.one.one.one",
+        "address": "tls://1.1.1.1",
         "address_resolver": "dns_direct",
         "detour": "自动选择"
       },
