@@ -30,6 +30,11 @@
         "detour": "DIRECT"
       },
       {
+        "tag": "dns_fakeip",
+        "address": "fakeip",
+        "detour": "自动选择"
+      },
+      {
         "tag": "block",
         "address": "rcode://success"
       }
@@ -41,28 +46,39 @@
       },
       {
         "outbound": "any",
-        "server": "dns_direct",
-        "disable_cache": true
+        "server": "dns_direct"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
       },
       {
         "clash_mode": "Direct",
         "server": "dns_direct"
       },
       {
-        "clash_mode": "Global",
-        "server": "dns_proxy"
-      },
-      {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
       {
-        "rule_set": "geosite-!cn",
-        "server": "dns_proxy"
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
       }
     ],
     "final": "dns_proxy",
-    "strategy": "prefer_ipv4"
+    "reverse_mapping": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "22.22.0.0/16",
+      "inet6_range": "fc00::/16"
+    },
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
   },
   "inbounds": [
     {
