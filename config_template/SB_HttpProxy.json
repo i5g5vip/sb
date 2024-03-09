@@ -21,7 +21,6 @@
       {
         "tag": "dns_proxy",
         "address": "tls://1.1.1.1",
-        "address_resolver": "dns_direct",
         "detour": "自动选择"
       },
       {
@@ -46,7 +45,8 @@
       },
       {
         "outbound": "any",
-        "server": "dns_direct"
+        "server": "dns_direct",
+        "disable_cache": true
       },
       {
         "clash_mode": "Global",
