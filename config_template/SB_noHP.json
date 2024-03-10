@@ -37,7 +37,7 @@
       {
         "rule_set": "geosite-ads",
         "server": "block"
-      },   
+      },
       {
         "outbound": "any",
         "server": "dns_direct",
