@@ -100,23 +100,7 @@
       ]
     },
     {
-      "tag":"ChatGPT",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
-        "{all}"
-      ]
-    },
-    {
-      "tag":"Gemini",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
-        "{all}"
-      ]
-    },
-    {
-      "tag":"Copilot",
+      "tag":"AI C-C-G",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -214,20 +198,12 @@
         "outbound": "DIRECT"
       },
       {
-        "rule_set": "geosite-openai",
-        "outbound": "ChatGPT"
-      },
-      {
-        "rule_set": "geosite-gemini",
-        "outbound": "Gemini"
-      },
-      {
-        "rule_set": "geosite-copilot",
-        "outbound": "Copilot"
-      },
-      {
-        "rule_set": "geoip-netflix",
-        "outbound": "Netflix Disney+"
+        "rule_set": [
+          "geosite-openai",
+          "geosite-gemini",
+          "geosite-copilot"
+        ],
+        "outbound": "AI C-C-G"
       },
       {
         "rule_set": [
@@ -279,7 +255,7 @@
         "type": "remote",
         "tag": "geosite-copilot",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Copilot.srs",
         "download_detour": "DIRECT"
       },
       {
