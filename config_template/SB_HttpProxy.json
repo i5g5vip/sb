@@ -234,78 +234,78 @@
         "type": "remote",
         "tag": "geosite-ads",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-openai",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Openai.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/openai.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-gemini",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Gemini.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/bm7/Gemini.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-copilot",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Copilot.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/bm7/Copilot.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geoip-netflix",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geoip/netflix.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-netflix",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/netflix.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-disney",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/disney.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-tiktok",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geoip/cn.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-cn",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/cn.srs",
+        "download_detour": "自动选择"
       },
       {
         "type": "remote",
         "tag": "geosite-!cn",
         "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-        "download_detour": "DIRECT"
+        "url": "https://github.com/10ta/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "自动选择"
       }
     ]
   }
