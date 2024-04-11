@@ -183,7 +183,10 @@
         "outbound": "手动选择"
       },
       {
-        "domain_suffix": ".googleapis.cn",
+        "domain_suffix": [
+          ".googleapis.cn",
+          ".bdys10.com"
+        ],
         "outbound": "手动选择"
       },
       {
