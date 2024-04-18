@@ -100,7 +100,7 @@
       ]
     },
     {
-      "tag":"AI C-C-G",
+      "tag":"ChatGPT",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "tag":"Netflix Disney+",
+      "tag":"油管",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "tag":"Tiktok",
+      "tag":"电报",
       "type":"selector",
       "outbounds":[
         "手动选择",
@@ -202,23 +202,22 @@
       },
       {
         "rule_set": [
-          "geosite-openai",
-          "geosite-gemini",
-          "geosite-copilot"
+          "geosite-openai"
         ],
-        "outbound": "AI C-C-G"
+        "outbound": "ChatGPT"
       },
       {
         "rule_set": [
-          "geoip-netflix",
-          "geosite-netflix",
-          "geosite-disney"
+          "geosite-youtube"
         ],
-        "outbound": "Netflix Disney+"
+        "outbound": "油管"
       },
       {
-        "rule_set": "geosite-tiktok",
-        "outbound": "Tiktok"
+        "rule_set": [
+          "geosite-telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "电报"
       },
       {
         "rule_set": [
@@ -249,44 +248,23 @@
       },
       {
         "type": "remote",
-        "tag": "geosite-gemini",
+        "tag": "geosite-youtube",
         "format": "binary",
-        "url": "https://github.com/i5g5vip/sb/raw/main/Gemini.srs",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
         "download_detour": "自动选择"
       },
       {
         "type": "remote",
-        "tag": "geosite-copilot",
+        "tag": "geoip-telegram",
         "format": "binary",
-        "url": "https://github.com/i5g5vip/sb/raw/main/Copilot.srs",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/telegram.srs",
         "download_detour": "自动选择"
       },
       {
         "type": "remote",
-        "tag": "geoip-netflix",
+        "tag": "geosite-telegram",
         "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/netflix.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-netflix",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netflix.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-disney",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/disney.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-tiktok",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/telegram.srs",
         "download_detour": "自动选择"
       },
       {
