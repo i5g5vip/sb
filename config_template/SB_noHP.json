@@ -73,7 +73,14 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "gvisor"
+      "stack": "gvisor",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      }
     },
     {
       "type": "mixed",
@@ -89,30 +96,6 @@
       "type":"selector",
       "outbounds":[
         "自动选择",
-        "{all}"
-      ]
-    },
-    {
-      "tag":"AI C-C-G",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
-        "{all}"
-      ]
-    },
-    {
-      "tag":"Netflix Disney+",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
-        "{all}"
-      ]
-    },
-    {
-      "tag":"Tiktok",
-      "type":"selector",
-      "outbounds":[
-        "手动选择",
         "{all}"
       ]
     },
@@ -177,8 +160,7 @@
       },
       {
         "domain_suffix": [
-          ".googleapis.cn",
-          ".bdys10.com"
+          ".googleapis.cn"
         ],
         "outbound": "手动选择"
       },
@@ -192,26 +174,6 @@
           "tscdn.hyz"
         ],
         "outbound": "DIRECT"
-      },
-      {
-        "rule_set": [
-          "geosite-openai",
-          "geosite-gemini",
-          "geosite-copilot"
-        ],
-        "outbound": "AI C-C-G"
-      },
-      {
-        "rule_set": [
-          "geoip-netflix",
-          "geosite-netflix",
-          "geosite-disney"
-        ],
-        "outbound": "Netflix Disney+"
-      },
-      {
-        "rule_set": "geosite-tiktok",
-        "outbound": "Tiktok"
       },
       {
         "rule_set": [
@@ -231,55 +193,6 @@
         "tag": "geosite-ads",
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-openai",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/openai.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-gemini",
-        "format": "binary",
-        "url": "https://github.com/i5g5vip/sb/raw/main/Gemini.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-copilot",
-        "format": "binary",
-        "url": "https://github.com/i5g5vip/sb/raw/main/Copilot.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geoip-netflix",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/netflix.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-netflix",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netflix.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-disney",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/disney.srs",
-        "download_detour": "自动选择"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-tiktok",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs",
         "download_detour": "自动选择"
       },
       {
