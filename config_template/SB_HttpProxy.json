@@ -184,8 +184,7 @@
       },
       {
         "domain_suffix": [
-          ".googleapis.cn",
-          ".bdys10.com"
+          ".googleapis.cn"
         ],
         "outbound": "手动选择"
       },
