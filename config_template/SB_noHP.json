@@ -29,6 +29,11 @@
         "detour": "DIRECT"
       },
       {
+        "tag": "dns_fakeip",
+        "address": "fakeip",
+        "detour": "自动选择"
+      },
+      {
         "tag": "block",
         "address": "rcode://success"
       }
@@ -44,23 +49,37 @@
         "disable_cache": true
       },
       {
-        "clash_mode": "Direct",
-        "server": "dns_direct"
+        "domain_suffix": ".googleapis.cn",
+        "server": "dns_proxy"
       },
       {
         "clash_mode": "Global",
-        "server": "dns_proxy"
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
       },
       {
         "rule_set": "geosite-cn",
         "server": "dns_direct"
       },
       {
-        "rule_set": "geosite-!cn",
-        "server": "dns_proxy"
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip",
+        "rewrite_ttl": 1
       }
     ],
     "final": "dns_proxy",
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "22.22.0.0/16",
+      "inet6_range": "fc00::/16"
+    },
     "strategy": "prefer_ipv4"
   },
   "inbounds": [
@@ -73,14 +92,7 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "gvisor",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "127.0.0.1",
-          "server_port": 2080
-        }
-      }
+      "stack": "gvisor"
     },
     {
       "type": "mixed",
