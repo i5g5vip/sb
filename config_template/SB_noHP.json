@@ -20,7 +20,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "tls://1.0.0.1",
+        "address": "udp://1.0.0.1",
         "detour": "自动选择"
       },
       {
