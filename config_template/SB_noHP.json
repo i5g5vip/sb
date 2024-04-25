@@ -146,10 +146,6 @@
         "outbound": "dns-out"
       },
       {
-        "port": 53,
-        "outbound": "dns-out"
-      },
-      {
         "network": "udp",
         "port": 443,
         "outbound": "REJECT"
