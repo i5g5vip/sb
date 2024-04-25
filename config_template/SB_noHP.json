@@ -168,7 +168,10 @@
       },
       {
         "domain_suffix": [
-          ".googleapis.cn"
+          ".googleapis.cn",
+          ".yjys.me",
+          ".freeok.me",
+          ".duboku.tv"
         ],
         "outbound": "手动选择"
       },
