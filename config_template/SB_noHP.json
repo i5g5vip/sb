@@ -188,8 +188,8 @@
       },
       {
         "rule_set": [
-          "geoip-cn",
-          "geosite-cn"
+          "geosite-cn",
+          "geoip-cn"
         ],
         "outbound": "DIRECT"
       },
