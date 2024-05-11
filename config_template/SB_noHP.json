@@ -73,6 +73,7 @@
       }
     ],
     "final": "dns_proxy",
+    "reverse_mapping": true,
     "fakeip": {
       "enabled": true,
       "inet4_range": "22.22.0.0/16",
