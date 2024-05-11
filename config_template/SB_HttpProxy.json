@@ -157,9 +157,8 @@
         "outbound": "dns-out"
       },
       {
-        "network": "udp",
-        "port": 443,
-        "outbound": "REJECT"
+        "port": 53,
+        "outbound": "dns-out"
       },
       {
         "ip_is_private": true,
