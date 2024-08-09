@@ -1,5 +1,5 @@
-import tool,json,re,urllib,sys
-from urllib.parse import urlparse, parse_qs, unquote
+import tool,json,re
+from urllib.parse import urlparse, parse_qs
 def parse(data):
     info = data[8:]
     if not info or info.isspace():

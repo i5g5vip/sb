@@ -165,7 +165,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-or you can directly select the template with the  `template_index`, `0` means the first template
+or you can directly select the template with the  `template_index`, `0` means the first template(no flask doesn't support)
 
 ```
 python main.py --template_index=0

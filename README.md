@@ -19,7 +19,7 @@ https://xxxxxxx.vercel.app/config/https://xxxxxxsubscribe?token=123456&file=2
 python main.py
 ```
 
-或者你可以直接带template_index参数选定模板，0表示第一个模板
+或者你可以直接带template_index参数选定模板，0表示第一个模板(no flask不支持此参数)
 
 ```
 python main.py --template_index=0

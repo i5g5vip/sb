@@ -1,4 +1,4 @@
-import tool,json,re,urllib,sys
+import tool,json,re,urllib
 from urllib.parse import parse_qs
 def parse(data):
     param = data[5:]

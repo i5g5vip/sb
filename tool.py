@@ -1,5 +1,8 @@
-import urllib.parse,base64,requests,paramiko,random,string,re,chardet
-from paramiko import SSHClient
+import base64,requests,random,string,re,chardet
+import warnings
+from cryptography.utils import CryptographyDeprecationWarning
+with warnings.catch_warnings(action="ignore", category=CryptographyDeprecationWarning):
+    import paramiko
 from scp import SCPClient
 
 def get_encoding(file):
@@ -311,7 +314,7 @@ class ConfigSSH:
             if k in server.keys():
                 self.server[k] = server[k]
     def connect(self):
-        ssh = SSHClient()
+        ssh = paramiko.SSHClient()
         ssh.load_system_host_keys()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(hostname=self.server['ip'],port=22, username=self.server['user'], password=self.server['password'])

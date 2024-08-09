@@ -1,4 +1,4 @@
-import tool,json,re,urllib,sys
+import tool
 def parse(data):
     info = data[6:]
     if not info or info.isspace():
