@@ -25,6 +25,13 @@ python main.py
 python main.py --template_index=0
 ```
 
+支持Docker
+
+```
+docker build --tag 'sing-box' .
+docker run -p 5000:5000 sing-box:latest
+```
+
 ### 根据已有的qx，surge，loon，clash规则列表自定义规则集[https://github.com/Toperlock/sing-box-geosite](https://github.com/Toperlock/sing-box-geosite)
 
 ### wechat规则集源文件写法：
