@@ -439,12 +439,12 @@ def combin_to_config(config, data):
                             out["outbounds"].insert(i, (group.rsplit("-", 1)[0]).rsplit("-", 1)[-1])
             new_outbound = {'tag': (group.rsplit("-", 1)[0]).rsplit("-", 1)[-1], 'type': 'selector', 'outbounds': ['{' + group + '}']}
             config_outbounds.insert(-4, new_outbound)
-        else:
-            for out in config_outbounds:
-                if out.get("outbounds"):
-                    if out['tag'] == 'Proxy':
-                        out["outbounds"] = [out["outbounds"]] if isinstance(out["outbounds"], str) else out["outbounds"]
-                        out["outbounds"].append('{' + group + '}')
+            if 'subgroup' not in group:
+                for out in config_outbounds:
+                    if out.get("outbounds"):
+                        if out['tag'] == 'Proxy':
+                            out["outbounds"] = [out["outbounds"]] if isinstance(out["outbounds"], str) else out["outbounds"]
+                            out["outbounds"].append('{' + group + '}')
     temp_outbounds = []
     if config_outbounds:
         # 提前处理all模板
