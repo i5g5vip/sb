@@ -148,7 +148,7 @@
       {
         "network": "udp",
         "port": 443,
-        "outbound": REJECT"
+        "outbound": "REJECT"
       },
       {
         "ip_is_private": true,
