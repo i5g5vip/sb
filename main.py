@@ -2,6 +2,7 @@ import json, os, tool, time, requests, sys, importlib, argparse, yaml, ruamel.ya
 import re
 from datetime import datetime
 from urllib.parse import urlparse
+from collections import OrderedDict
 from api.app import TEMP_DIR
 from parsers.clash2base64 import clash2v2ray
 
@@ -508,6 +509,20 @@ def combin_to_config(config, data):
     asod = providers.get("auto_set_outbounds_dns")
     if asod and asod.get('proxy') and asod.get('direct') and asod['proxy'] in dns_tags and asod['direct'] in dns_tags:
         set_proxy_rule_dns(config)
+    # 提取 wireguard 类型内容
+    wireguard_items = [item for item in config['outbounds'] if item.get('type') == 'wireguard']
+    if wireguard_items:
+        endpoints = []
+        for item in wireguard_items:
+            endpoints.append(item)
+        new_config = OrderedDict()
+        for key, value in config.items():
+            new_config[key] = value
+            if key == 'outbounds':  # 在 outbounds 后面插入 endpoint
+                new_config['endpoints'] = endpoints
+        config = new_config
+        # 更新 outbounds，移除 wireguard 类型
+        config['outbounds'] = [item for item in config['outbounds'] if item.get('type') != 'wireguard']
     return config
 
 
