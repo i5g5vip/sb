@@ -159,6 +159,10 @@
         "outbound": "dns-out"
       },
       {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
         "network": "udp",
         "port": 443,
         "outbound": "REJECT"
@@ -182,8 +186,6 @@
       {
         "domain_suffix": [
           ".googleapis.cn",
-          ".yjys.me",
-          ".freeok.me",
           ".duboku.tv"
         ],
         "outbound": "手动选择"
@@ -191,10 +193,6 @@
       {
         "domain_keyword": [
           "vip.ffzy",
-          "vip.lz-cdn",
-          "vip.kuaikan",
-          "v.cdnlz",
-          "bfbfvip.com",
           "tscdn.hyz"
         ],
         "outbound": "DIRECT"
