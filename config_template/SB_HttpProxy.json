@@ -140,14 +140,6 @@
     {
       "type": "direct",
       "tag": "DIRECT"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "REJECT"
     }
   ],
   "route": {
@@ -155,17 +147,29 @@
     "final": "手动选择",
     "rules": [
       {
+        "action": "sniff"
+      },
+      {
         "protocol": "dns",
-        "outbound": "dns-out"
+        "action": "hijack-dns"
       },
       {
-        "port": 53,
-        "outbound": "dns-out"
-      },
-      {
-        "network": "udp",
-        "port": 443,
-        "outbound": "REJECT"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "action": "reject",
+        "method": "default"
       },
       {
         "ip_is_private": true,
@@ -173,7 +177,8 @@
       },
       {
         "rule_set": "geosite-ads",
-        "outbound": "REJECT"
+        "action": "reject",
+        "method": "default"
       },
       {
         "clash_mode": "Direct",
