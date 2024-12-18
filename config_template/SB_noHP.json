@@ -129,14 +129,6 @@
     {
       "type": "direct",
       "tag": "DIRECT"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "REJECT"
     }
   ],
   "route": {
@@ -144,13 +136,29 @@
     "final": "手动选择",
     "rules": [
       {
-        "protocol": "dns",
-        "outbound": "dns-out"
+        "action": "sniff"
       },
       {
-        "network": "udp",
-        "port": 443,
-        "outbound": "REJECT"
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "action": "reject",
+        "method": "default"
       },
       {
         "ip_is_private": true,
@@ -158,7 +166,8 @@
       },
       {
         "rule_set": "geosite-ads",
-        "outbound": "REJECT"
+        "action": "reject",
+        "method": "default"
       },
       {
         "clash_mode": "Direct",
@@ -171,8 +180,6 @@
       {
         "domain_suffix": [
           ".googleapis.cn",
-          ".yjys.me",
-          ".freeok.me",
           ".duboku.tv"
         ],
         "outbound": "手动选择"
@@ -180,11 +187,7 @@
       {
         "domain_keyword": [
           "vip.ffzy",
-          "vip.lz-cdn",
-          "vip.kuaikan",
-          "v.cdnlz",
-          "bfbfvip.com",
-          "tscdn.hyz"
+          "vip.lz-cdn"
         ],
         "outbound": "DIRECT"
       },
