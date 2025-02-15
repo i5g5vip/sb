@@ -439,7 +439,7 @@ def combin_to_config(config, data):
                         else:
                             out["outbounds"].insert(i, (group.rsplit("-", 1)[0]).rsplit("-", 1)[-1])
             new_outbound = {'tag': (group.rsplit("-", 1)[0]).rsplit("-", 1)[-1], 'type': 'selector', 'outbounds': ['{' + group + '}']}
-            config_outbounds.insert(-4, new_outbound)
+            config_outbounds.insert(-2, new_outbound)
             if 'subgroup' not in group:
                 for out in config_outbounds:
                     if out.get("outbounds"):
