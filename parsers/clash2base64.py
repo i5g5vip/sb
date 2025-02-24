@@ -185,7 +185,7 @@ def clash2v2ray(share_link):
             "fp": share_link.get('client-fingerprint', ''),
             "type": share_link.get('network', 'tcp'),
             "flow": share_link.get('flow', ''),
-            'allowInsecure': '0' if share_link.get('skip-cert-verify') == False else '1',
+            'allowInsecure': '1' if share_link.get('skip-cert-verify') == True else '0',
             "name": quote(share_link['name'], 'utf-8')
         }
         if share_link.get('tls') == False:
