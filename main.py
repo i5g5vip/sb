@@ -448,6 +448,8 @@ def combin_to_config(config, data):
                             out["outbounds"].append('{' + group + '}')
     temp_outbounds = []
     if config_outbounds:
+        # 获取 "type": "direct"的"tag"值
+        direct_item = next((item for item in config_outbounds if item.get('type') == 'direct'), None)
         # 提前处理all模板
         for po in config_outbounds:
             # 处理出站
@@ -484,7 +486,7 @@ def combin_to_config(config, data):
                     else:
                         t_o.append(oo)
                 if len(t_o) == 0:
-                    t_o.append('Proxy')
+                    t_o.append(direct_item['tag'])  # outbound内容为空时 添加直连 direct
                     print('发现 {} 出站下的节点数量为 0 ，会导致sing-box无法运行，请检查config模板是否正确。'.format(
                         po['tag']))
                     # print('Sing-Box không chạy được vì không tìm thấy bất kỳ proxy nào trong outbound của {}. Vui lòng kiểm tra xem mẫu cấu hình có đúng không!!'.format(po['tag']))
