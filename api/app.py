@@ -252,7 +252,7 @@ def config(url):
     #return page_content
     try:
         selected_template_index = '0'
-        selected_gh_proxy_index = '0'
+        selected_gh_proxy_index = ''
         if file_param.isdigit():
             temp_json_data['config_template'] = ''
             selected_template_index = str(int(file_param) - 1)

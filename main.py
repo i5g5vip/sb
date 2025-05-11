@@ -610,11 +610,13 @@ if __name__ == '__main__':
     nodes = process_subscribes(providers["subscribes"])
 
     # 处理github加速
-    gh_proxy_index = int(args.gh_proxy_index) if args.gh_proxy_index and args.gh_proxy_index.isdigit() else 0
-    urls = [item["url"] for item in config["route"]["rule_set"]]
-    new_urls = set_gh_proxy(urls, gh_proxy_index)
-    for item, new_url in zip(config["route"]["rule_set"], new_urls):
-        item["url"] = new_url
+    if hasattr(args, 'gh_proxy_index') and str(args.gh_proxy_index).isdigit():
+        gh_proxy_index = int(args.gh_proxy_index)
+        print(gh_proxy_index)
+        urls = [item["url"] for item in config["route"]["rule_set"]]
+        new_urls = set_gh_proxy(urls, gh_proxy_index)
+        for item, new_url in zip(config["route"]["rule_set"], new_urls):
+            item["url"] = new_url
 
 
     if providers.get('Only-nodes'):

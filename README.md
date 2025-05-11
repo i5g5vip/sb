@@ -32,7 +32,7 @@ docker build --tag 'sing-box' .
 docker run -p 5000:5000 sing-box:latest
 ```
 
-支持自定义GitHub加速链接（使用参数&gh=1 数字代表使用第一个github加速）
+支持自定义GitHub加速链接（使用参数&gh=1 数字代表使用第一个github加速），默认不加此参数。只有原始GitHub文件链接或者已经使用以下GitHub加速链接才能替换
 
 ```
 1. "https://gh-proxy.com/",
