@@ -109,7 +109,7 @@ def edit_temp_json():
 
 @app.route('/config/<path:url>', methods=['GET'])
 def config(url):
-    user_agent = request.headers.get('User-Agent')
+    user_agent = request.headers.get('User-Agent') or ""
     rua_values = os.getenv('RUA')
     if rua_values and any(rua_value in user_agent for rua_value in rua_values.split(',')):
         return Response(json.dumps({'status': 'error', 'message': 'block'}, indent=4, ensure_ascii=False),
